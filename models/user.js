@@ -5,12 +5,19 @@ const bcrypt = require('bcrypt');
 const UserSchema = new Schema({
   createdAt: { type: Date },
   updatedAt: { type: Date },
-  fullName: { type: String, required: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
   email: { type: String, required: true },
   phoneNumber: { type: String, required: true },
+  bestWayToContact: { type: Array },
   username: { type: String, required: true },
   password: { type: String, select: false },
-  projects : [{ type: Schema.Types.ObjectId, ref: "Project", required: false }],
+  membershipType: { type: String },
+  address: { type: String },
+  city: { type: String },
+  state: { type: String },
+  zipcode: { type: String },
+  appointments : [{ type: Schema.Types.ObjectId, ref: "Appointment", required: false }],
   isAdmin: { type: Boolean, default: false },
 });
 
@@ -50,19 +57,3 @@ UserSchema.methods.comparePassword = function(password, done) {
 }; //ends comparePassword
 
 module.exports = mongoose.model("User", UserSchema);
-
-  
-  // User.find({username: this.username, email: this.email}, function() {
-  //   console.log("username:", username);
-    
-  //   if (username || email) {
-  //     console.log("this person already exists.");
-  //     console.log("username:", username);
-  //     console.log("email:", email);
-  //     next(new Error("User exists!"));
-  //   } else {
-  //     console.log("IN THE ELSE");
-      
-  //     next();
-  //   }
-  // })

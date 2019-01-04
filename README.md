@@ -3,6 +3,7 @@
 ## How to Run
 1. `git clone https://github.com/YazanKittaneh/handyskilled`
 2. `npm install`
+3. `npm install nodemon`
 3. `nodemon`
 
 ## Routes

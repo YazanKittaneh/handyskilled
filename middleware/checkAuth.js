@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
         User.findById(uid).then(user => {
             req.user = user;
             res.locals.authenticatedUser = user;
-            // console.log("authenticatedUser:",res.locals.authenticatedUser);
             next();
             return true;
         });

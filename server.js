@@ -1,11 +1,13 @@
 // require('dotenv').config(); // later for env variables we need.
-var express = require('express');
-var path = require('path');
+require('dotenv').config();
+const express = require('express');
+const path = require('path');
 // express-validator is a wrapper around validator.js that validates and sanitizes string inputs. In production, your users will try to type in all kinds of nonsense into your forms --- even things your site wasn't intended to deal with! express-validator plugs into the Express.js ecosystem and helps keep you and your code safe.
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 const bodyParser = require('body-parser'); //this basically allows us to get the request body from each well, request.
 const logger = require('morgan');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 // Use Body Parser
@@ -37,11 +39,14 @@ app.use(express.static(__dirname + '../public'));
 
 // require routers (mountable route handlers. This instead of passing in the whole app to each module.)
 const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const checkAuth = require('./middleware/checkAuth');
 // specific custom auth checking middleware.
-// const checkAuth = require('./middleware/checkAuth');
 
 // app.use(checkAuth);
 app.use('/', indexRouter);
+app.use('/', usersRouter);
+app.use('/', checkAuth);
 
 // error handler - later.
 app.use(function(err, req, res, next) {

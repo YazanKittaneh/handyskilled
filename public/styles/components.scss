@@ -1,0 +1,48 @@
+.navbar {
+    background-color: #ffffff;
+    padding-left: 42px;
+    padding-right: 42px;
+    .navbar-brand {
+        font-size: 34px;
+        color: #ff721c !important;
+        font-weight: 700 !important;
+        margin-left: 5em;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    .book-btn {
+        background-color: #ff721c;
+        border: none;
+        .book-link {
+            text-decoration: none;
+            cursor: pointer;
+            color: #ffffff;
+            border: none;
+        }
+    }
+}
+
+$small-phone-width: 310px; // Small tablets and large smartphones (landscape view)
+
+$tablet-width: 768px; // Small tablets (portrait view)
+
+$desktop-width: 1200px; // Large tablets and desktops
+
+// we will design for mobile first so only need to media query tablets and desktop views.
+@mixin phone {
+    @media (min-width: #{$small-phone-width}) {
+        @content;
+      }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+      @content;
+    }
+}

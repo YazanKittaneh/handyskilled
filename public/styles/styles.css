@@ -1,0 +1,33 @@
+.navbar {
+  background-color: #ffffff;
+  padding-left: 42px;
+  padding-right: 42px;
+}
+.navbar .navbar-brand {
+  font-size: 34px;
+  color: #ff721c !important;
+  font-weight: 700 !important;
+  margin-left: 5em;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.navbar .book-btn {
+  background-color: #ff721c;
+}
+.navbar .book-btn .book-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+@media (min-width: 1200px) {
+  .home-top-bg {
+    width: 100vw;
+    height: 100%;
+    padding: 25px;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

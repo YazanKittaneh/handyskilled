@@ -43,7 +43,7 @@ const indexRouter = require('./routes/index');
 // app.use(checkAuth);
 app.use('/', indexRouter);
 
-// error handler
+// error handler - later.
 app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;

@@ -17,7 +17,7 @@ const UserSchema = new Schema({
   city: { type: String },
   state: { type: String },
   zipcode: { type: String },
-  appointments : [{ type: Schema.Types.ObjectId, ref: "Appointment", required: false }],
+  appointmentsId : [{ type: Schema.Types.ObjectId, ref: "Appointment", required: false }],
   isAdmin: { type: Boolean, default: false },
 });
 

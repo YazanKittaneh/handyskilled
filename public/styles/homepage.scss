@@ -1,10 +1,17 @@
 
 @include desktop {
-    .home-top-bg {
-        width: 100vw;
-        height: 100%;
-        padding: 25px;
-        background-repeat: no-repeat;
-        background-size: auto;
+    .top-container {
+        position: relative;
+        text-align: center;
+        .hero-image {
+            width: 100vw;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+        .hero-label {
+            font-size: 26px;
+            color: $white;
+        }
     }
 }

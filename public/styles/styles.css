@@ -6,27 +6,43 @@
 .navbar .navbar-brand {
   font-size: 34px;
   color: #ff721c !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   margin-left: 5em;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 .navbar .book-btn {
   background-color: #ff721c;
+  border: none;
 }
 .navbar .book-btn .book-link {
   text-decoration: none;
   cursor: pointer;
   color: #ffffff;
+  border: none;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (min-width: 1200px) {
-  .home-top-bg {
+  .top-container {
+    position: relative;
+    text-align: center;
+  }
+  .top-container .hero-image {
     width: 100vw;
     height: 100%;
-    padding: 25px;
     background-repeat: no-repeat;
     background-size: auto;
+  }
+  .top-container .hero-label {
+    font-size: 26px;
+    color: #ffffff;
   }
 }
 
